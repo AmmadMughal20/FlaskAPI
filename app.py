@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, request
-from db import db_connection
 import pyodbc
 
 
@@ -26,7 +25,7 @@ def api():
     
 @app.route('/users', methods=['GET', 'POST'])
 def users():
-    cnxn = db_connection()
+    cnxn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER=portfolio.cho0icqkw4r2.us-east-1.rds.amazonaws.com;DATABASE=Portfolio;UID=admin;TrustServerCertificate=yes;PWD=LED5Vredyellowgreen')
     try:
         crsr = cnxn.cursor()
         crsr.execute("SELECT * FROM users")
