@@ -1,0 +1,16 @@
+<!-- Index.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <h1 class="animated-title">Projects</h1>
+    <p>This is the projects page content.</p>
+
+
+<script src="{{ url_for('static', filename='animations.js') }}"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='index_styles.css') }}">
+
+{% endblock %}

@@ -5,12 +5,25 @@ app = Flask(__name__)
 def index():
     return render_template('Index.html')
 
-@app.route('/page')
-def page():
-    return render_template('Page.html')
+@app.route('/about')
+def about():
+    return render_template('About.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('Contact.html')
+
+@app.route('/projects')
+def projects():
+    return render_template('Projects.html')
+
+@app.route('/education')
+def education():
+    return render_template('Education.html')
 
 @app.route('/api', methods=[ 'GET', 'POST'])
 def api():
+    
     if(request.method == 'GET'):
         dictionary = {
             'name': 'Ammad',

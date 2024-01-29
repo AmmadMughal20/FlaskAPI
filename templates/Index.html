@@ -1,70 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Index.html -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ammad Flask Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+{% extends 'base.html' %}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+{% block title %}Home{% endblock %}
 
-        nav {
-            margin-bottom: 20px;
-        }
+{% block content %}
+<header>
+    <div class="container">
+        <h1 class="animated-header">Your Name</h1>
+        <p class="animated-subtitle">Web Designer</p>
+    </div>
+</header>
 
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-        }
+<section class="about-me">
+    <div class="container">
+        <h2 class="animated-title">About Me</h2>
+        <p>Welcome to my portfolio! I am a passionate web designer with a focus on creating beautiful and
+            user-friendly websites.</p>
+    </div>
+</section>
 
-        section {
-            margin-bottom: 30px;
-        }
+<section class="portfolio">
+    <div class="container">
+        <h2 class="animated-title">Portfolio</h2>
+        <!-- Add your portfolio items here -->
+        <div class="portfolio-item animated-item">
+            <img src="{{ url_for('static', filename='project1.png') }}" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="portfolio-item animated-item">
+            <img src="{{ url_for('static', filename='project2.png') }}" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Description of Project 2.</p>
+        </div>
+    </div>
+</section>
 
-        h2 {
-            color: #333;
-        }
+<section class="contact">
+    <div class="container">
+        <h2 class="animated-title">Contact Me</h2>
+        <p>Feel free to reach out to me. I am available for new projects and collaborations.</p>
+        <!-- Add your contact form or contact information here -->
+    </div>
+</section>
 
-        p {
-            color: #666;
-        }
-    </style>
-</head>
+<script src="{{ url_for('static', filename='animations.js') }}"></script>
 
-<body>
-    <header>
-        <h1>Muhammad Ammad</h1>
-    </header>
-
-    <nav>
-        <a href="/">Portfolio</a>
-        <a href="/page">Page</a>
-        <a href="/api">API</a>
-        <!-- Add more navigation links for additional pages -->
-    </nav>
-
-    <section id="portfolio">
-        <h2>My Portfolio</h2>
-        <p>Welcome to my portfolio! I am passionate about creating innovative solutions and constantly expanding my skills.</p>
-        <!-- Add more details about your portfolio here -->
-    </section>
-
-    <section id="api-project">
-        <h2>API Project</h2>
-        <p>As part of my API development skills, I am working on a project where I create various demo APIs to showcase my abilities. These APIs demonstrate different functionalities and use cases, highlighting my proficiency in API development.</p>
-        <!-- Add more details about your API project here -->
-    </section>
-</body>
-
-</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='index_styles.css') }}">
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>{% block title %}Your Flask App{% endblock %}</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <button class="menu-btn" id="menu-btn">☰ Menu</button>
+        <div class="menu-content" id="menu-content">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/contact" class="nav-link">Contact</a>
+            <a href="/projects" class="nav-link">Projects</a>
+            <a href="/education" class="nav-link">Education</a>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='animation.js') }}"></script>
+
+</body>
+
+</html>
